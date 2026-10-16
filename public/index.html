@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>iPad Tablet</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div><strong>iPad Tablet</strong><span id="connection">Connecting…</span></div>
+    <nav>
+      <button id="arm" disabled>Enable drawing</button>
+      <button id="stop">Stop</button>
+      <button id="position" aria-pressed="false">Position only: off</button>
+      <button id="fullscreen">Full screen</button>
+      <label id="testPatternLabel" hidden>Test <select id="testPattern"><option value="wave">Pressure wave</option><option value="circle">Reference circle</option></select></label>
+      <button id="test" hidden>Run test in 8 seconds</button>
+    </nav>
+  </header>
+  <p id="message">Diagnostic input is local until you enable drawing.</p>
+  <div id="content">
+    <aside id="pairing" hidden>
+      <h2>Connect your iPad</h2>
+      <p>Scan with the iPad Camera, then tap the link to open Safari.</p>
+      <img id="pairingQr" alt="QR code for the complete iPad pairing link" width="280" height="280">
+      <label for="network">Wi-Fi network address</label>
+      <select id="network"></select>
+      <a id="pairingLink">Open pairing link</a>
+      <p>Keep both devices on the same Wi-Fi. If scanning fails, try another address above.</p>
+    </aside>
+    <main id="workspace"><div id="surface"><span id="hint">Pencil input surface</span><canvas id="preview"></canvas><span id="desktopCursor" hidden></span><span id="contactCursor" hidden></span></div></main>
+  </div>
+  <div id="fullscreenControls" hidden>
+    <button id="fullscreenArm" disabled>Enable drawing</button>
+    <button id="fullscreenPosition" aria-pressed="false">Position only: off</button>
+    <button id="fullscreenStop">Stop</button>
+    <button id="fullscreenExit">Exit full screen</button>
+  </div>
+  <footer>
+    <span id="metrics">Use your Pencil to inspect input.</span>
+    <span id="strokes">Captured 0 · Sent 0 · Injected 0</span>
+    <span id="delivery">Samples sent 0 · Windows 0 · Network RTT —</span>
+    <span id="captureTiming">Event age p95 — · Sample gap p95 —</span>
+    <label>Pencil capture <select id="captureMode"><option value="pointer">Pointer</option><option value="touch">iPad touch</option></select></label>
+    <label><input type="checkbox" id="showPreview" checked> Local preview</label>
+    <button id="clear">Clear preview</button>
+  </footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
